@@ -133,3 +133,105 @@ int LocateElemSeqList(SeqList &L, ElemType e)
     }
     return 0;
 }
+
+bool InitLinkList(LinkList &L)
+{
+    L = (LinkList) malloc(sizeof(LNode));
+    if (L == NULL) return false;
+    L->next = NULL;
+    return true;
+}
+
+bool EmptyLinkList(LinkList L)
+{
+    return L->next == NULL;
+}
+
+bool InsertNodeLinkList(LNode *a, LNode *b)
+{
+    if (a == NULL || b == NULL) return false;
+    b->next = a->next;
+    a->next = b->next;
+    return true;
+}
+
+bool HeadInsertLinkList(LinkList &L)
+{
+    InitLinkList(L);
+    ElemType data;
+    LNode *node;
+    scanf("%d", &data);
+    while (data != 9999)
+    {
+        node = (LNode *) malloc(sizeof(LNode));
+        if (node == NULL) return false;
+        node->data = data;
+        InsertNodeLinkList(L, node);
+        scanf("%d", &data);
+    }
+    return true;
+}
+
+bool TailInsertLinkList(LinkList &L)
+{
+    InitLinkList(L);
+    ElemType data;
+    LNode *tail = L;
+    LNode *node;
+    scanf("%d", &data);
+    while (data != 9999)
+    {
+        node = (LNode *) malloc(sizeof(LNode));
+        if (node == NULL) return false;
+        node->data = data;
+        InsertNodeLinkList(tail, node);
+        tail = node;
+        scanf("%d", &data);
+    }
+    tail->next = NULL;
+    return true;
+}
+
+LNode *GetElem(LinkList L, int pos)
+{
+    if (pos < 1) return NULL;
+    LNode *p = L;
+    int i = 0;
+    while (p->next != NULL && i < pos)
+    {
+        p = p->next;
+        i++;
+    }
+    return p;
+}
+
+LNode *LocateElem(LinkList L, ElemType e)
+{
+    LNode *p = L->next;
+    while (p != NULL && p->data != e)
+    {
+        p = p->next;
+    }
+    return p;
+}
+
+bool InsertNodePosLinkList(LinkList &L, int pos, ElemType e)
+{
+    LNode *posNode = GetElem(L, pos - 1);
+    LNode *newNode = (LNode *) malloc(sizeof(LNode));
+    if (posNode == NULL || newNode == NULL) return false;
+    InsertNodeLinkList(posNode, newNode);
+    return true;
+}
+
+int LengthLinkList(LinkList L)
+{
+    int length = 0;
+    LNode *p = L->next;
+    while (p != NULL)
+    {
+        p = p->next;
+        length++;
+    }
+    return length;
+}
