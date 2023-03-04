@@ -1,7 +1,11 @@
-#include <iostream>
+#include "solutions.h"
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    LinkList L;
+    HeadInsertLinkList(L);
+    ReverseLinkList(L);
+    PrintLinkList(L);
+
     return 0;
 }

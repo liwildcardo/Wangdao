@@ -142,6 +142,12 @@ bool InitLinkList(LinkList &L)
     return true;
 }
 
+bool InitLinkListNoHead(LinkList &L)
+{
+    L = NULL;
+    return true;
+}
+
 bool EmptyLinkList(LinkList L)
 {
     return L->next == NULL;
@@ -151,7 +157,16 @@ bool InsertNodeLinkList(LNode *a, LNode *b)
 {
     if (a == NULL || b == NULL) return false;
     b->next = a->next;
-    a->next = b->next;
+    a->next = b;
+    return true;
+}
+
+bool DeleteNodeLinkList(LNode *a)
+{
+    if (a->next == NULL) return false;
+    LNode *p = a->next;
+    a->next = p->next;
+    free(p);
     return true;
 }
 
@@ -234,4 +249,24 @@ int LengthLinkList(LinkList L)
         length++;
     }
     return length;
+}
+
+void PrintLinkList(LinkList L)
+{
+    LNode *p = L->next;
+    while (p != NULL)
+    {
+        printf("%d\n", p->data);
+        p = p->next;
+    }
+}
+
+void PrintLinkListNoHead(LinkList L)
+{
+    LNode *p = L;
+    while (p != NULL)
+    {
+        printf("%d\n", p->data);
+        p = p->next;
+    }
 }

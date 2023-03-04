@@ -81,11 +81,17 @@ typedef struct LNode
 // 初始化一个带头结点的单链表
 bool InitLinkList(LinkList &L);
 
+// 初始化一个不带头结点的单链表
+bool InitLinkListNoHead(LinkList &L);
+
 // 判断单链表是否为空
 bool EmptyLinkList(LinkList L);
 
 // 在a结点后插入b结点
 bool InsertNodeLinkList(LNode *a, LNode *b);
+
+// 删除a结点后的结点
+bool DeleteNodeLinkList(LNode *a);
 
 // 使用头插法建立单链表
 bool HeadInsertLinkList(LinkList &L);
@@ -104,5 +110,11 @@ bool InsertNodePosLinkList(LinkList &L, int pos, ElemType e);
 
 // 求单链表表长
 int LengthLinkList(LinkList L);
+
+// 打印单链表
+void PrintLinkList(LinkList L);
+
+// 打印不带头结点的单链表
+void PrintLinkListNoHead(LinkList L);
 
 #endif //WANGDAO_DATASTRUCTURES_H

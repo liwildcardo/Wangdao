@@ -3,4 +3,4 @@ project(Wangdao)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Wangdao main.cpp datastructures.cpp datastructures.h)
+add_executable(Wangdao main.cpp datastructures.cpp datastructures.h solutions.cpp solutions.h)
