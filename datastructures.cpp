@@ -259,6 +259,7 @@ void PrintLinkList(LinkList L)
         printf("%d\n", p->data);
         p = p->next;
     }
+    printf("print list success!\n");
 }
 
 void PrintLinkListNoHead(LinkList L)

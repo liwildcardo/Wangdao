@@ -22,4 +22,19 @@ bool ReverseLinkList(LinkList &L);
 // 06 Design an algorithm to make link list in incremental order
 bool IncrementalLinkList(LinkList &L);
 
+// 07 Design an algorithm to delete nodes whose data between s and t
+bool DeleteSTLinkList(LinkList &L, ElemType s, ElemType t);
+
+// 08 Design an algorithm to find the public node of two link lists
+LNode *FindPublicNodeLinkList(LinkList L1, LinkList L2);
+
+// 09 Output the node data in incremental order, and release the space of the nodes
+bool OutPutIncrementalAndDeleteLinkList(LinkList &L);
+
+// 10 Decompose a single linked list into two single linked lists, one containing an odd number of nodes, one containing an even number of nodes, with the same relative position
+bool DecomposeTwoLinkList(LinkList &A, LinkList &B);
+
+// 12 remove duplicate nodes in an increasing link list
+bool RemoveDuplicateLinkList(LinkList &L);
+
 #endif //WANGDAO_SOLUTIONS_H
