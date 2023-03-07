@@ -7,34 +7,37 @@
 
 #include "datastructures.h"
 
-// 01 设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点
+// p38-01 Design an algorithm to delete all nodes value 'x' in a single link list L without head node
 void DeleteValueXLinkList(LinkList &L, ElemType x);
 
-// 02 在带头结点的单链表中删除所有值为x的结点（假设不唯一）
+// p38-02 Delete all nodes value 'x' in a single link list L with head node
 void DeleteXLinkList(LinkList &L, ElemType x);
 
-// 04 试编写带头结点的单链表L中删除一个最小值的结点的高效算法（假设最小值唯一）
+// p38-04 Design an algorithm to delete the minimum node in single link list with head node(assume only one minimum node)
 bool DeleteMinLinkList(LinkList &L);
 
-// 05 试编写带头结点的单链表就地逆置，辅助空间复杂度为O(1)
+// p38-05 试编写带头结点的单链表就地逆置，辅助空间复杂度为O(1) Design an algorithm to reverse the single link list, whose space complexity should be O(1)
 bool ReverseLinkList(LinkList &L);
 
-// 06 Design an algorithm to make link list in incremental order
+// p38-06 Design an algorithm to make link list in incremental order
 bool IncrementalLinkList(LinkList &L);
 
-// 07 Design an algorithm to delete nodes whose data between s and t
+// p38-07 Design an algorithm to delete nodes whose data between s and t
 bool DeleteSTLinkList(LinkList &L, ElemType s, ElemType t);
 
-// 08 Design an algorithm to find the public node of two link lists
+// p38-08 Design an algorithm to find the public node of two link lists
 LNode *FindPublicNodeLinkList(LinkList L1, LinkList L2);
 
-// 09 Output the node data in incremental order, and release the space of the nodes
+// p38-09 Output the node data in incremental order, and release the space of the nodes
 bool OutPutIncrementalAndDeleteLinkList(LinkList &L);
 
-// 10 Decompose a single linked list into two single linked lists, one containing an odd number of nodes, one containing an even number of nodes, with the same relative position
+// p38-10 Decompose a single linked list into two single linked lists, one containing an odd number of nodes, one containing an even number of nodes, with the same relative position
 bool DecomposeTwoLinkList(LinkList &A, LinkList &B);
 
-// 12 remove duplicate nodes in an increasing link list
+// p38-12 Remove duplicate nodes in an increasing link list
 bool RemoveDuplicateLinkList(LinkList &L);
+
+// p67-04 Design an algorithm to determine whether the data of the elems are central symmetric
+bool IsCentralSymmetricLinkList(LinkList &L);
 
 #endif //WANGDAO_SOLUTIONS_H

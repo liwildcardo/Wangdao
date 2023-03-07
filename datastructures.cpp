@@ -271,3 +271,74 @@ void PrintLinkListNoHead(LinkList L)
         p = p->next;
     }
 }
+
+void InitSqStack(SqStack &S)
+{
+    S.top = -1;
+}
+
+bool EmptySqStack(SqStack S)
+{
+    return S.top == -1;
+}
+
+bool PushSqStack(SqStack &S, ElemType e)
+{
+    if (S.top == MaxSize - 1) return false;
+    S.data[++S.top] = e;
+    return true;
+}
+
+bool PopSqStack(SqStack &S, ElemType &e)
+{
+    if (EmptySqStack(S)) return false;
+    e = S.data[S.top--];
+    return true;
+}
+
+bool GetTopSqStack(SqStack S, ElemType &e)
+{
+    if (EmptySqStack(S)) return false;
+    e = S.data[S.top];
+    return true;
+}
+
+bool InitLinkStack(LinkStack &S)
+{
+    S = (LinkStack) malloc(sizeof(StackNode));
+    if (S == NULL) return false;
+    S->next = NULL;
+    return true;
+}
+
+bool EmptyLinkStack(LinkStack S)
+{
+    return (S->next == NULL);
+}
+
+bool PushLinkStack(LinkStack &S, ElemType e)
+{
+    StackNode *node = (StackNode *) malloc(sizeof(StackNode));
+    if (node == NULL) return false;
+    node->data = e;
+    node->next = S->next;
+    S->next = node;
+    return true;
+}
+
+bool PopLinkStack(LinkStack &S, ElemType &e)
+{
+    if (EmptyLinkStack(S)) return false;
+    e = S->next->data;
+    StackNode *node = S->next;
+    S->next = node->next;
+    free(node);
+    return true;
+}
+
+bool GetTopLinkStack(LinkStack S, ElemType &e)
+{
+    if (EmptyLinkStack(S)) return false;
+    e = S->next->data;
+    return true;
+}

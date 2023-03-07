@@ -215,3 +215,9 @@ bool RemoveDuplicateLinkList(LinkList &L)
     printf("remove success!\n");
     return true;
 }
+
+bool IsCentralSymmetricLinkList(LinkList &L)
+{
+
+    return true;
+}

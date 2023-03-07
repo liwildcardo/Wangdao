@@ -12,109 +12,161 @@
 #define ElemType int
 
 
-// 数据结构：静态顺序表
+// Data structure：static sequence list
 typedef struct
 {
     ElemType data[MaxSize];
     int length;
 } SqList;
 
-// 初始化静态顺序表
+// Init sequence list
 void InitSqList(SqList &L);
 
-// 判断静态顺序表是否为空
+// Is sequence list empty
 bool EmptySqList(SqList L);
 
-// 判断静态顺序表是否为满
+// Is sequence list full
 bool FullSqList(SqList L);
 
-// 在静态顺序表的表尾添加新元素
+// Add a new elem on the tail of the list
 bool AddElemSqList(SqList &L, ElemType x);
 
-// 在静态顺序表的pos位序插入新元素
+// Insert a new elem on the 'pos' position
 bool InsertElemSqList(SqList &L, int pos, ElemType x);
 
-// 删除静态顺序表的位序为pos的元素，返回被删除的元素x
+// Delete the 'pos' position elem, return it
 bool DeleteElemSqList(SqList &L, int pos, ElemType &x);
 
-// 查找静态顺序表第一个元素值为e的元素，并返回其位序
+// Find the first elem which values 'e'
 int LocateElemSqList(SqList L, ElemType e);
 
-// 数据结构：动态顺序表。表的最大长度可以动态分配
+
+
+// Data structure: Dynamic sequence list
 typedef struct
 {
     ElemType *data;
     int length, maxSize;
 } SeqList;
 
-// 初始化一个动态顺序表
+// Init a dynamic sequence list
 bool InitSeqList(SeqList &L, int maxSize);
 
-// 判断动态顺序表是否为空
+// Is dynamic sequence list empty
 bool EmptySeqList(SeqList L);
 
-// 判断动态顺序表是否为满
+// Is dynamic sequence list full
 bool FullSeqList(SeqList L);
 
-// 动态顺序表的上限增加length长度
+// Add 'length' length to the dynamic sequence list
 bool AddLengthSeqList(SeqList &L, int length);
 
-// 在动态顺序表的表尾添加新元素
+// Add a new elem to the end of the list
 bool AddElemSeqList(SeqList &L, ElemType x);
 
-// 在动态顺序表的pos位序插入新元素
+// Insert a new elem at the 'pos' position
 bool InsertElemSeqList(SeqList &L, int pos, ElemType x);
 
-// 删除动态顺序表的位序为pos的元素，返回被删除的元素x
+// Delete the 'pos' position elem of the list, return its value
 bool DeleteElemSeqList(SeqList &L, int pos, ElemType &x);
 
-// 查找动态顺序表第一个元素值为e的元素，并返回其位序
+// Find the first elem values 'e', return its position
 int LocateElemSeqList(SeqList &L, ElemType e);
 
-// 数据结构：单链表
+
+
+// Data structure: single link list
 typedef struct LNode
 {
     ElemType data;
     LNode *next;
 } LNode, *LinkList;
 
-// 初始化一个带头结点的单链表
+// Init a single link list with head node
 bool InitLinkList(LinkList &L);
 
-// 初始化一个不带头结点的单链表
+// Init a single link list without head node
 bool InitLinkListNoHead(LinkList &L);
 
-// 判断单链表是否为空
+// Is single link list empty
 bool EmptyLinkList(LinkList L);
 
-// 在a结点后插入b结点
+// Insert a 'b' node behind 'a' node
 bool InsertNodeLinkList(LNode *a, LNode *b);
 
-// 删除a结点后的结点
+// Delete the node behind 'a' node
 bool DeleteNodeLinkList(LNode *a);
 
-// 使用头插法建立单链表
+// Build a single link list by head insertion method
 bool HeadInsertLinkList(LinkList &L);
 
-// 使用尾插法建立单链表
+// Build a single link list by tail insertion method
 bool TailInsertLinkList(LinkList &L);
 
-// 单链表按序号查找位序为pos的结点
+// Get the 'pos' position node of the single link list
 LNode *GetElem(LinkList L, int pos);
 
-// 单链表按值查找第一个值为e的结点
+// Find the first node values 'e' of the single link list
 LNode *LocateElem(LinkList L, ElemType e);
 
-// 在单链表的pos位序插入值为e的结点
+// Insert a new node values 'e' at the 'pos' position fo the single link list
 bool InsertNodePosLinkList(LinkList &L, int pos, ElemType e);
 
-// 求单链表表长
+// Get the single link list's length
 int LengthLinkList(LinkList L);
 
-// 打印单链表
+// Print the single link list
 void PrintLinkList(LinkList L);
 
-// 打印不带头结点的单链表
+// Print the single link list doesn't have head node
 void PrintLinkListNoHead(LinkList L);
+
+
+
+// Data structure: Sequential Stack
+typedef struct
+{
+    ElemType data[MaxSize];
+    int top;
+} SqStack;
+
+// Initialize stack
+void InitSqStack(SqStack &S);
+
+// Is stack empty
+bool EmptySqStack(SqStack S);
+
+// Push
+bool PushSqStack(SqStack &S, ElemType e);
+
+// Pop
+bool PopSqStack(SqStack &S, ElemType &e);
+
+// Get the top element
+bool GetTopSqStack(SqStack S, ElemType &e);
+
+
+
+// Data structure: Link Stack
+typedef struct StackNode
+{
+    ElemType data;
+    StackNode *next;
+} StackNode, *LinkStack;
+
+// Initialize link stack
+bool InitLinkStack(LinkStack &S);
+
+// Is link stack empty
+bool EmptyLinkStack(LinkStack S);
+
+// Push
+bool PushLinkStack(LinkStack &S, ElemType e);
+
+// Pop
+bool PopLinkStack(LinkStack &S, ElemType &e);
+
+// Get the top element
+bool GetTopLinkStack(LinkStack S, ElemType &e);
 
 #endif //WANGDAO_DATASTRUCTURES_H
