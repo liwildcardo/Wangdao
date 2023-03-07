@@ -16,7 +16,7 @@ void DeleteXLinkList(LinkList &L, ElemType x);
 // p38-04 Design an algorithm to delete the minimum node in single link list with head node(assume only one minimum node)
 bool DeleteMinLinkList(LinkList &L);
 
-// p38-05 试编写带头结点的单链表就地逆置，辅助空间复杂度为O(1) Design an algorithm to reverse the single link list, whose space complexity should be O(1)
+// p38-05 Design an algorithm to reverse the single link list, whose space complexity should be O(1)
 bool ReverseLinkList(LinkList &L);
 
 // p38-06 Design an algorithm to make link list in incremental order
@@ -31,7 +31,8 @@ LNode *FindPublicNodeLinkList(LinkList L1, LinkList L2);
 // p38-09 Output the node data in incremental order, and release the space of the nodes
 bool OutPutIncrementalAndDeleteLinkList(LinkList &L);
 
-// p38-10 Decompose a single linked list into two single linked lists, one containing an odd number of nodes, one containing an even number of nodes, with the same relative position
+// p38-10 Decompose a single linked list into two single linked lists, one containing an odd number of nodes,
+// one containing an even number of nodes, with the same relative position
 bool DecomposeTwoLinkList(LinkList &A, LinkList &B);
 
 // p38-12 Remove duplicate nodes in an increasing link list

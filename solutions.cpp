@@ -218,6 +218,18 @@ bool RemoveDuplicateLinkList(LinkList &L)
 
 bool IsCentralSymmetricLinkList(LinkList &L)
 {
+    if (L->next == NULL) return false;
+    int length = LengthLinkList(L);
+    LNode *p = L->next;
+    LinkStack S;
+    InitLinkStack(S);
+    int i = 0;
+    while (i < length / 2)
+    {
+        PushLinkStack(S, p->data);
+        p = p->next;
+        i++;
+    }
 
     return true;
 }
