@@ -230,6 +230,23 @@ bool IsCentralSymmetricLinkList(LinkList &L)
         p = p->next;
         i++;
     }
-
+    if (length % 2 != 0)
+    {
+        i++;
+        p = p->next;
+    }
+    ElemType e;
+    while (i < length)
+    {
+        PopLinkStack(S, e);
+        if (e != p->data)
+        {
+            printf("list is not central symmetric!\n");
+            return false;
+        }
+        p = p->next;
+        i++;
+    }
+    printf("list is central symmetric!\n");
     return true;
 }

@@ -169,4 +169,55 @@ bool PopLinkStack(LinkStack &S, ElemType &e);
 // Get the top element
 bool GetTopLinkStack(LinkStack S, ElemType &e);
 
+// Print link stack
+void PrintLinkStack(LinkStack S);
+
+
+
+// Data structure: Sequential Queue
+typedef struct
+{
+    ElemType data[MaxSize];
+    int front, rear;
+} SqQueue;
+
+// Init a sequential Queue
+void InitSqQueue(SqQueue &Q);
+
+// Is sequential queue empty
+bool EmptySqQueue(SqQueue Q);
+
+// If the sequential queue is not full, add 'e' as the new tail of the queue
+bool EnSqQueue(SqQueue &Q, ElemType e);
+
+// If the sequential queue is not empty, delete the head elem and return it as 'e'
+bool DeSqQueue(SqQueue &Q, ElemType &e);
+
+// If the sequential queue is not empty, get the head elem and return it as 'e'
+bool GetHeadSqQueue(SqQueue Q, ElemType &e);
+
+
+
+// Data structure: Link Queue
+typedef struct QueueNode
+{
+    ElemType data;
+    QueueNode *next;
+} QueueNode;
+typedef struct {
+    QueueNode *front;
+    QueueNode *rear;
+    int length;
+} LinkQueue;
+
+// Init the link queue
+bool InitLinkQueue(LinkQueue &Q);
+
+// Is the link queue empty
+bool EmptyLinkQueue(LinkQueue Q);
+
+bool EnLinkQueue(LinkQueue &Q, ElemType e);
+
+bool DeLinkQueue(LinkQueue &Q, ElemType &e);
+
 #endif //WANGDAO_DATASTRUCTURES_H

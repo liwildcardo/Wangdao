@@ -3,10 +3,10 @@
 int main()
 {
     LinkList L;
-    HeadInsertLinkList(L);
+    TailInsertLinkList(L);
     PrintLinkList(L);
-    RemoveDuplicateLinkList(L);
-    PrintLinkList(L);
+
+    IsCentralSymmetricLinkList(L);
 
     return 0;
 }

@@ -313,7 +313,7 @@ bool InitLinkStack(LinkStack &S)
 
 bool EmptyLinkStack(LinkStack S)
 {
-    return (S->next == NULL);
+    return S->next == NULL;
 }
 
 bool PushLinkStack(LinkStack &S, ElemType e)
@@ -340,5 +340,91 @@ bool GetTopLinkStack(LinkStack S, ElemType &e)
 {
     if (EmptyLinkStack(S)) return false;
     e = S->next->data;
+    return true;
+}
+
+void PrintLinkStack(LinkStack S)
+{
+    StackNode *p = S->next;
+    while (p != NULL)
+    {
+        printf("%d\n", p->data);
+        p = p->next;
+    }
+    printf("print stack success\n");
+}
+
+void InitSqQueue(SqQueue &Q)
+{
+    Q.front = 0;
+    Q.rear = 0;
+}
+
+bool EmptySqQueue(SqQueue Q)
+{
+    return Q.rear == Q.front;
+}
+
+bool EnSqQueue(SqQueue &Q, ElemType e)
+{
+    if ((Q.rear + 1) % MaxSize == Q.front)
+        return false;
+    Q.data[Q.rear] = e;
+    Q.rear = (Q.rear + 1) % MaxSize;
+    return true;
+}
+
+bool DeSqQueue(SqQueue &Q, ElemType &e)
+{
+    if (EmptySqQueue(Q)) return false;
+    e = Q.data[Q.front];
+    Q.front = (Q.front + 1) % MaxSize;
+    return true;
+}
+
+bool GetHeadSqQueue(SqQueue Q, ElemType &e)
+{
+    if (EmptySqQueue(Q)) return false;
+    e = Q.data[Q.front];
+    return true;
+}
+
+bool InitLinkQueue(LinkQueue &Q)
+{
+    Q.front = Q.rear = (QueueNode *) malloc(sizeof(QueueNode));
+    if (Q.front == NULL) return false;
+    Q.front->next = NULL;
+    Q.length = 0;
+    return true;
+}
+
+bool EmptyLinkQueue(LinkQueue Q)
+{
+    return Q.front->next == NULL;
+    // return Q.front == Q.rear;
+    // return Q.length == 0;
+}
+
+bool EnLinkQueue(LinkQueue &Q, ElemType e)
+{
+    QueueNode *node = (QueueNode *) malloc(sizeof(QueueNode));
+    if (node == NULL) return false;
+    node->data = e;
+    node->next = Q.rear->next;
+    Q.rear->next = node;
+    Q.rear = node;
+    Q.length++;
+    return true;
+}
+
+bool DeLinkQueue(LinkQueue &Q, ElemType &e)
+{
+    if (EmptyLinkQueue(Q)) return false;
+    QueueNode *node = Q.front->next;
+    e = node->data;
+    Q.front->next = node->next;
+    if (node->next == NULL) Q.rear = Q.front;
+    free(node);
+    Q.length--;
     return true;
 }

@@ -41,4 +41,6 @@ bool RemoveDuplicateLinkList(LinkList &L);
 // p67-04 Design an algorithm to determine whether the data of the elems are central symmetric
 bool IsCentralSymmetricLinkList(LinkList &L);
 
+// p67-05
+
 #endif //WANGDAO_SOLUTIONS_H
