@@ -145,6 +145,9 @@ bool PopSqStack(SqStack &S, ElemType &e);
 // Get the top element
 bool GetTopSqStack(SqStack S, ElemType &e);
 
+// bracket check algorithm
+bool BracketCheck(char *str, int length);
+
 
 
 // Data structure: Link Stack

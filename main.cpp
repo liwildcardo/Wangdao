@@ -2,11 +2,8 @@
 
 int main()
 {
-    LinkList L;
-    TailInsertLinkList(L);
-    PrintLinkList(L);
-
-    IsCentralSymmetricLinkList(L);
+    char a[10] = {'(', '[', '{', '[', '(', ')', ']', '}', ']', ')'};
+    if (BracketCheck(a, sizeof a / sizeof(char))) printf("success!\n");
 
     return 0;
 }

@@ -303,6 +303,27 @@ bool GetTopSqStack(SqStack S, ElemType &e)
     return true;
 }
 
+bool BracketCheck(char *str, int length)
+{
+    SqStack S;
+    InitSqStack(S);
+    for (int i = 0; i < length; i++)
+    {
+        if (str[i] == '(' || str[i] == '[' || str[i] == '{')
+        {
+            PushSqStack(S, str[i]);
+        } else
+        {
+            int e; // cast char to int
+            PopSqStack(S, e);
+            if (str[i] == ')' && e != '(') return false;
+            if (str[i] == ']' && e != '[') return false;
+            if (str[i] == '}' && e != '{') return false;
+        }
+    }
+    return EmptySqStack(S);
+}
+
 bool InitLinkStack(LinkStack &S)
 {
     S = (LinkStack) malloc(sizeof(StackNode));
