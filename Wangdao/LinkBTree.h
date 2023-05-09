@@ -15,7 +15,6 @@ typedef struct LinkBTreeNode
 	LinkBTreeNode *rchild;
 } *LinkBTree;
 
-
 // ³õÊ¼»¯¶þ²æÊ÷
 bool Init(LinkBTree &T)
 {
