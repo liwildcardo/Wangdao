@@ -134,6 +134,7 @@
     <ClInclude Include="LinkBTree.h" />
     <ClInclude Include="LinkQueue.h" />
     <ClInclude Include="LinkStack.h" />
+    <ClInclude Include="SqStack.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
