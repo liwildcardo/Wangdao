@@ -21,13 +21,13 @@ bool Init(SqQueue &Q)
 }
 
 // 判断队列是否为空
-bool Empty(SqQueue &Q)
+bool Empty(SqQueue Q)
 {
 	return Q.front == Q.rear;
 }
 
 // 判断队列是否为满
-bool Full(SqQueue &Q)
+bool Full(SqQueue Q)
 {
 	return Q.rear == (Q.front + 1) % SqQueueMaxSize;
 }

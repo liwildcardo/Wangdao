@@ -5,3 +5,4 @@ typedef int LinkQueueElemType;
 typedef int LinkBTreeElemType;
 
 typedef int SqQueueElemType;
+typedef int SqStackElemType;
